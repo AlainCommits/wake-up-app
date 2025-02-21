@@ -1,157 +1,134 @@
-# Weck-Anruf App - Installations-Guide
+# Weck-Anruf App - Windows Installations-Guide
 
-Hey! Hier ist deine Schritt-für-Schritt Anleitung, wie du die Weck-Anruf App auf deinem Computer entwickelst und auf dein Handy bekommst.
+## Teil 1: Code herunterladen und einrichten
 
-## Teil 1: Android Studio installieren (für den Handy-Emulator)
-
-1. Geh auf die Android Studio Website:
-   - Öffne deinen Browser
-   - Geh zu: https://developer.android.com/studio
-   - Klick auf den großen grünen "Download Android Studio" Button
-   - Wähle die Version für dein Betriebssystem (Windows/Mac)
-
-2. Android Studio installieren:
-   - Doppelklick auf die heruntergeladene Datei
-   - Folge dem Installations-Assistenten (klick einfach immer auf "Weiter"/"Next")
-   - Am Ende klickst du auf "Fertig"/"Finish"
-
-3. Android Studio zum ersten Mal starten:
-   - Starte Android Studio
-   - Beim ersten Start erscheint ein Setup-Assistent
-   - Wähle "Standard" Installation
-   - Klick dich durch den Assistenten (immer "Next")
-   - Das dauert ein paar Minuten und lädt einige zusätzliche Komponenten herunter
-
-## Teil 2: Flutter installieren
-
-1. Flutter herunterladen:
-   - Geh zu: https://docs.flutter.dev/get-started/install
-   - Scroll runter bis "Get the Flutter SDK"
-   - Lade die ZIP-Datei für dein Betriebssystem herunter
-
-2. Flutter einrichten:
-   - Erstelle einen Ordner "flutter" in "C:\flutter" (Windows) oder "~/flutter" (Mac)
-   - Entpacke die ZIP-Datei in diesen Ordner
-   - WICHTIG: Merke dir diesen Pfad!
-
-3. Flutter zur PATH-Variable hinzufügen:
-   
-   Für Windows:
-   - Drücke Windows-Taste + R
-   - Tippe "systempropertiesadvanced" und drücke Enter
-   - Klick auf "Umgebungsvariablen"
-   - Unter "Benutzervariablen" wähle "Path"
-   - Klick auf "Neu"
-   - Füge den Pfad "C:\flutter\bin" hinzu
-   - OK klicken und alle Fenster schließen
-
-   Für Mac:
-   - Öffne Terminal
-   - Tippe: `open -e ~/.zshrc`
-   - Füge diese Zeile hinzu: `export PATH="$PATH:~/flutter/bin"`
-   - Speichern und Terminal neu starten
-
-4. Überprüfen der Installation:
-   - Öffne ein neues Terminal/Kommandozeile
-   - Tippe: `flutter doctor`
-   - Dies zeigt dir, ob alles korrekt installiert ist
-
-## Teil 3: Handy-Emulator erstellen
-
-1. Android Studio öffnen:
-   - Starte Android Studio
-   - Klick auf "Tools" → "Device Manager"
-   - Klick auf "Create Device"
-
-2. Emulator konfigurieren:
-   - Wähle "Pixel 6" (oder ein anderes Handy)
-   - Klick "Next"
-   - Wähle die neueste Android Version (z.B. "API 33")
-   - Klick auf "Download" neben der Android Version
-   - Warte bis der Download fertig ist
-   - Klick "Next" und dann "Finish"
-
-## Die einfache Methode: Build-Skripte benutzen! 🚀
-
-Ich habe dir zwei einfache Skripte vorbereitet, mit denen du die App ganz leicht installieren kannst:
-
-### Wenn du Windows hast:
-1. Doppelklicke einfach auf die Datei `build.bat`
-2. Ein schwarzes Fenster öffnet sich
-3. Folge den Anweisungen im Fenster
-4. Warte bis alles fertig ist
-
-### Wenn du Mac oder Linux hast:
-1. Öffne ein Terminal
-2. Geh in den wake_up_app Ordner
-3. Tippe diese zwei Befehle:
-   ```bash
-   chmod +x build.sh
-   ./build.sh
+### GitHub Projekt herunterladen
+1. Öffne einen Browser und geh zu diesem Link:
    ```
-4. Folge den Anweisungen im Terminal
+   https://github.com/AlainCommits/wake-up-app
+   ```
+2. Klicke auf den grünen "Code" Button
+3. Klicke auf "Download ZIP"
+4. Die Datei wird als "wake-up-app-main.zip" heruntergeladen
+5. Entpacke die ZIP-Datei:
+   - Rechtsklick auf die ZIP-Datei
+   - "Alle extrahieren..." wählen
+   - Wähle einen Ordner aus, wo du das Projekt haben möchtest
+   - Klicke "Extrahieren"
 
-Die Skripte machen automatisch alles für dich:
-- Prüfen ob Flutter richtig installiert ist
-- Laden alle nötigen Dateien herunter
-- Bauen die App
-- Installieren sie auf deinem Handy (wenn es angeschlossen ist)
+### Projekt in Android Studio öffnen
+1. Starte Android Studio
+2. Klicke auf "Open"
+3. Suche den Ordner, wo du das Projekt entpackt hast
+4. Wähle den "wake-up-app-main" Ordner aus
+5. Klicke auf "OK"
+6. Warte bis Android Studio das Projekt lädt
+   - Es erscheint "Gradle Build Running" unten
+   - Das kann ein paar Minuten dauern
+7. Wenn Android Studio fragt "Trust and Open Project?":
+   - Haken bei "Trust project" setzen
+   - Auf "Trust and Open" klicken
 
-## Die manuelle Methode (wenn die Skripte nicht funktionieren)
+## Teil 2: Voraussetzungen installieren
 
-1. App-Ordner vorbereiten:
-   - Entpacke den "wake_up_app" Ordner den du von mir bekommen hast
-   - Öffne ein Terminal/Kommandozeile
-   - Navigiere in den Ordner (mit dem `cd` Befehl)
-   - Tippe: `flutter pub get`
+### Android Studio installieren (falls noch nicht geschehen)
+1. Öffne www.developer.android.com/studio im Browser
+2. Klicke auf den großen grünen "Download Android Studio" Button
+3. Lade die .exe Datei herunter
+4. Doppelklicke auf die heruntergeladene Datei
+5. Klicke dich durch die Installation:
+   - "Next" klicken
+   - Installation Location bestätigen (Standard ist okay)
+   - "Next" klicken
+   - "Install" klicken
+   - Warten bis die Installation fertig ist
+   - "Next" klicken
+   - "Finish" klicken
+6. Beim ersten Start von Android Studio:
+   - "Next" bei "Welcome" klicken
+   - "Standard" Installation wählen
+   - "Next" klicken
+   - Warten bis alles heruntergeladen ist (dauert einige Minuten)
+   - "Finish" klicken
 
-2. App im Emulator starten:
-   - Starte den Emulator aus Android Studio
-   - Im Terminal, immer noch im wake_up_app Ordner, tippe:
-   - `flutter run`
-   - Warte bis die App startet (das kann beim ersten Mal etwas dauern)
+### Flutter installieren
+1. Geh zu flutter.dev/docs/get-started/install/windows
+2. Klicke auf "Flutter SDK"
+3. Lade die .zip Datei herunter
+4. Erstelle einen Ordner "C:\flutter"
+5. Entpacke die ZIP-Datei dort hinein
+6. Flutter zur PATH-Variable hinzufügen:
+   - Windows-Taste + R drücken
+   - "systempropertiesadvanced" eingeben
+   - Enter drücken
+   - Auf "Umgebungsvariablen" klicken
+   - Unter "Benutzervariablen" auf "Path" doppelklicken
+   - Auf "Neu" klicken
+   - "C:\flutter\bin" eingeben
+   - OK klicken
+   - Alle Fenster mit OK schließen
+7. Computer neu starten
 
-## App auf dein echtes Handy bringen
+## Teil 3: App auf dein Handy bringen
 
-1. Entwickleroptionen auf deinem Handy aktivieren:
-   - Geh zu den Einstellungen
+Du hast zwei Möglichkeiten:
+
+### Methode 1: Über Android Studio (empfohlen)
+1. Schließe dein Handy per USB an
+2. Aktiviere USB-Debugging auf deinem Handy:
+   - Geh zu Einstellungen
    - Scroll ganz nach unten zu "Über das Telefon"
-   - Tippe 7 mal schnell auf "Build-Nummer"
-   - Du siehst eine Nachricht "Du bist jetzt ein Entwickler"
+   - Tippe 7 mal auf "Build-Nummer"
+   - Geh zurück und finde "Entwickleroptionen"
+   - Schalte "USB-Debugging" ein
+3. In Android Studio:
+   - Warte bis das Projekt vollständig geladen ist
+   - Dein Handy sollte oben in der Geräteliste erscheinen
+   - Klicke auf den grünen "Play" Button
+   - Die App wird automatisch gebaut und installiert
 
-2. USB-Debugging aktivieren:
-   - Geh zurück zu Einstellungen
-   - Scroll nach unten zu "Entwickleroptionen"
-   - Aktiviere "USB-Debugging"
+### Methode 2: Mit dem build.bat Skript
+1. Geh in den Projektordner
+2. Doppelklicke auf `build.bat`
+3. Folge den Anweisungen im Fenster
 
-3. Handy mit Computer verbinden:
-   - Verbinde dein Handy per USB-Kabel
-   - Auf deinem Handy erscheint eine Meldung "USB-Debugging zulassen?"
-   - Wähle "Zulassen"
+Das Skript macht automatisch:
+- Prüft ob Flutter installiert ist
+- Lädt Abhängigkeiten herunter
+- Baut die App
+- Installiert sie auf deinem Handy
 
-4. App installieren:
-   - Im Terminal, im wake_up_app Ordner, tippe:
-   - `flutter build apk`
-   - Dann: `flutter install`
-   - Die App wird auf dein Handy installiert
+## Probleme? Hier sind die Lösungen:
 
-## Häufige Probleme und Lösungen
+### Android Studio erkennt Flutter nicht
+1. In Android Studio:
+   - File → Settings
+   - Suche nach "Flutter"
+   - Bei "Flutter SDK path" gib ein: C:\flutter
+   - Klicke "OK"
+   - Warte auf den Neustart
 
-1. "Flutter command not found":
-   - Überprüfe, ob du Flutter korrekt zur PATH-Variable hinzugefügt hast
-   - Starte dein Terminal/Kommandozeile neu
+### "Flutter wird nicht erkannt"
+1. Prüfe ob Flutter richtig installiert ist:
+   - Öffne cmd
+   - Tippe: `flutter doctor`
+2. Wenn der Befehl nicht funktioniert:
+   - Computer neu starten
+   - PATH-Variable nochmal prüfen
 
-2. Emulator startet nicht:
-   - Überprüfe in Android Studio unter "Tools" → "SDK Manager"
-   - Stelle sicher, dass du die Android SDK installiert hast
+### Handy wird nicht erkannt
+1. USB-Debugging nochmal aus- und einschalten
+2. Anderes USB-Kabel probieren
+3. In den Entwickleroptionen:
+   - "USB-Debugging" aus- und wieder einschalten
+   - "USB-Konfiguration" auf "Dateiübertragung" stellen
 
-3. App baut nicht:
-   - Führe `flutter clean` aus
-   - Dann `flutter pub get`
-   - Versuche es erneut mit `flutter run`
+## Fertig? So benutzt du die App:
 
-4. Build-Skript funktioniert nicht:
-   - Versuche die manuelle Installation wie oben beschrieben
-   - Oft hilft es auch, den Computer neu zu starten
+1. Starte die App auf deinem Handy
+2. Tippe auf das + Symbol
+3. Wähle eine Uhrzeit für den Weckruf
+4. Gib eine Telefonnummer ein
+5. Fertig! Die App wird zur eingestellten Zeit anrufen
 
-Komm einfach auf mich zu, wenn du Hilfe brauchst! 😊# wake-up-app
+Brauchst du Hilfe? Schreib mir einfach! 😊
